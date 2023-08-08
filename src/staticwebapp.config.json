@@ -1,14 +1,35 @@
 {
-  "routes": [
-    {
-      "route": "/*",
-      "allowedRoles": ["authenticated"]
+    "routes": [
+        {
+            "route": "/*",
+            "allowedRoles": ["authenticated"]
+        }
+    ],
+    "responseOverrides": {
+        "401": {
+            "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer",
+            "statusCode": 302
+        }
+    },
+    "auth": {
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/629ba906-d77e-4dc6-acf3-d71375b281ea",
+                    "clientIdSettingName": "e2d0f9dd-cbcd-4c96-b8de-83ead1b5b594",
+                    "clientSecretSettingName": "default"
+                }
+            }
+        },
+        "globalHeaders": {
+            "Cache-Control": "no-cache"
+        },
+        "mimeTypes": {
+            ".js": "application/javascript"
+        }
+    },
+    "mimeTypes": {
+        ".js": "application/javascript"
     }
-  ],
-  "responseOverrides": {
-    "401": {
-      "statusCode": 302,
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer"
-    }
-  }
 }
