@@ -22,7 +22,11 @@
           "clientIdSettingName": "AZURE_CLIENT_ID",
           "clientSecretSettingName": "AZURE_CLIENT_SECRET"
         }
-      }
-    }
+      }},
+                "mimeTypes": {
+            ".js": "application/javascript"}
+    },
+        "mimeTypes": {
+        ".js": "application/javascript"
   }
 }
