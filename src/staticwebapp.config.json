@@ -21,15 +21,5 @@
                     "clientSecretSettingName": "AZURE_CLIENT_SECRET "
                 }
             }
-        },
-        "globalHeaders": {
-            "Cache-Control": "no-cache"
-        },
-        "mimeTypes": {
-            ".js": "application/javascript"
-        }
-    },
-    "mimeTypes": {
-        ".js": "application/javascript"
-    }
-}
+        }}}
+
